@@ -1,11 +1,13 @@
 // import constant  with the two variables
 // import gameLogic with with the two functions
 // import storage with with the two functions
+import { EMOJI, MAX_HISTORY } from "./constants";
+import { getComputerChoice } from "./gameLogic";
 import { loadState } from "./storage";
 // Game Stats
 const state = {
   wins: 0,
-  losees: 0,
+  losses: 0,
   ties: 0,
   history: [],
 };
@@ -24,21 +26,45 @@ function addEventListeners() {
   document.querySelector(".reset-btn").addEventListener("click", resetGame);
 }
 //  handle user choice
+function handleChoice(event) {
+  const userChoice = event.target.dataset.choice;
+  const computerChoice = getComputerChoice();
+  const result = determineResult(userChoice, computerChoice);
 
+  updateState(result, userChoice, computerChoice);
+  render();
+  saveState(state);
+}
 // update game state
+function updateState(result, userChoice, computerChoice) {
+  if (result === "win") state.win++;
+  else if (result === "lose") state.losses++;
+  else state.ties++;
 
-// add the current match to history
-
-// Limit hisory to max_history item
+  // add the current match to history
+  state.history.unshift(
+    `${EMOJI[userChoice]} vs ${EMOJI[computerChoice]} -> ${result}`
+  );
+}
+// Limit history to max_history item
+if (state.history.length > MAX_HISTORY) state.history.pop();
 
 // render the UI
-
-// update scores
+function render() {
+  // update scores
+  document.getElementById("wins").textContent = state.wins;
+  document.getElementById("losses").textContent = state.losses;
+  document.getElementById("ties").textContent = state.ties;
+}
 
 // update history
-
+document.getElementById("history").innerHTML = state.history.join("<br>");
 // update result text
-
+const resultElement = document.getElementById("result");
+if (state.history.length > 0) {
+  const lastResult = state.history[0].split("->")[1].trim();
+  resultElement.textContent = lastResult;
+}
 // color code the result
 
 // reset the game
