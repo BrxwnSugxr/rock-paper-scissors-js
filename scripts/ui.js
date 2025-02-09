@@ -97,6 +97,20 @@ function render() {
     }
   }
 }
+
+// Theme toggle
+document.querySelector(".theme-btn").addEventListener("click", toggleTheme);
+
+function toggleTheme() {
+  document.body.classList.toggle("light-theme");
+  const themeBtn = document.querySelector(".theme-btn");
+  if (document.body.classList.contains("light-theme")) {
+    themeBtn.textContent = "🌙 Dark Mode";
+  } else {
+    themeBtn.textContent = "☀️ Light Mode";
+  }
+}
+
 // reset the game
 function resetGame() {
   state.wins = 0;
