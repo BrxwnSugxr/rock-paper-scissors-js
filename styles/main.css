@@ -78,3 +78,51 @@ body{
 .reset-btn:hover{
     background:darkred;
 }
+
+
+/* Animations */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply animations */
+.choices button {
+  
+}
+
+.choices button:active {
+  
+}
+
+.result {
+
+}
+
+.history {
+ 
+}
+
+/* Shake animation for ties */
+.tie-animation {
+ 
+}
+
+/* Bounce animation for wins */
+.win-animation {
+  
+}
