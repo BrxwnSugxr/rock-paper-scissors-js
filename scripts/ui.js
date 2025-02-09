@@ -55,18 +55,23 @@ function render() {
   document.getElementById("wins").textContent = state.wins;
   document.getElementById("losses").textContent = state.losses;
   document.getElementById("ties").textContent = state.ties;
-}
 
-// update history
-document.getElementById("history").innerHTML = state.history.join("<br>");
-// update result text
-const resultElement = document.getElementById("result");
-if (state.history.length > 0) {
-  const lastResult = state.history[0].split("->")[1].trim();
-  resultElement.textContent = lastResult;
-}
-// color code the result
+  // update history
+  document.getElementById("history").innerHTML = state.history.join("<br>");
+  // update result text
+  const resultElement = document.getElementById("result");
+  if (state.history.length > 0) {
+    const lastResult = state.history[0].split("->")[1].trim();
+    resultElement.textContent = lastResult;
 
+    // color code the result
+    if (lastresult.include("Win")) resultElement.style.color = "green";
+    else if (lastResult.includes("Lose")) resultElement.style.color = "red";
+    else resultElement.style.color = "yellow";
+  } else {
+    resultElement.textContent = "";
+  }
+}
 // reset the game
 
 //  start the game
