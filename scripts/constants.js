@@ -1,3 +1,10 @@
+/**
+ * CHOICES: An array of valid choices (R, P, S).
+ * EMOJIS: A mapping of choices to their emoji representations.
+ * MAX_HISTORY: The maximum number of matches to display in the history.
+ * WIN_CONDITIONS: Defines what beats what (e.g., Rock beats Scissors).
+ */
+
 // Game choices
 export const CHOICES = ["R", "P", "S"];
 
