@@ -1,3 +1,12 @@
+/**state: An object to store the game's current state (wins, losses, ties, history).
+ * init(): Initializes the game by loading the state, rendering the UI, and adding event listeners.
+ * addEventListeners(): Adds click event listeners to the buttons.
+ * handleChoice(): Handles the user's choice, determines the result, and updates the state.
+ * updateState(): Updates the game state (wins, losses, ties, history).
+ * render(): Updates the UI to reflect the current state.
+ * resetGame(): Resets the game state and UI.
+ */
+
 // import constant  with the two variables
 // import gameLogic with with the two functions
 // import storage with with the two functions
