@@ -1,3 +1,12 @@
+/* Explanation of the CSS Code
+Dark Theme: The app uses a dark theme with a #222 background and white text.
+
+Centered Layout: The game container is centered with max-width: 400px and margin: 0 auto.
+
+Button Styles: Buttons have padding, rounded corners, and hover effects.
+
+Responsive Design: The layout adapts to different screen sizes */ 
+
 /*General Styles */
 body{
     font-family: Arial, sans-serif;
