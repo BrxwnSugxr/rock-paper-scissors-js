@@ -61,24 +61,40 @@ if (state.history.length > MAX_HISTORY) state.history.pop();
 // render the UI
 function render() {
   // update scores
-  document.getElementById("wins").textContent = state.wins;
-  document.getElementById("losses").textContent = state.losses;
-  document.getElementById("ties").textContent = state.ties;
+  function render() {
+    // Update scores
+    document.getElementById("wins").textContent = state.wins;
+    document.getElementById("losses").textContent = state.losses;
+    document.getElementById("ties").textContent = state.ties;
 
-  // update history
-  document.getElementById("history").innerHTML = state.history.join("<br>");
-  // update result text
-  const resultElement = document.getElementById("result");
-  if (state.history.length > 0) {
-    const lastResult = state.history[0].split("->")[1].trim();
-    resultElement.textContent = lastResult;
+    // Update history
+    document.getElementById("history").innerHTML = state.history.join("<br>");
 
-    // color code the result
-    if (lastResult.include("Win")) resultElement.style.color = "green";
-    else if (lastResult.includes("Lose")) resultElement.style.color = "red";
-    else resultElement.style.color = "yellow";
-  } else {
-    resultElement.textContent = "";
+    // Update result text
+    const resultElement = document.getElementById("result");
+    if (state.history.length > 0) {
+      const lastResult = state.history[0].split("→")[1].trim();
+      resultElement.textContent = lastResult;
+
+      // Color code the result
+      if (lastResult.includes("Win")) {
+        resultElement.style.color = "green";
+        resultElement.classList.add("win-animation");
+      } else if (lastResult.includes("Lose")) {
+        resultElement.style.color = "red";
+        resultElement.classList.remove("win-animation", "tie-animation");
+      } else {
+        resultElement.style.color = "yellow";
+        resultElement.classList.add("tie-animation");
+      }
+
+      // Remove animation classes after the animation ends
+      resultElement.addEventListener("animationend", () => {
+        resultElement.classList.remove("win-animation", "tie-animation");
+      });
+    } else {
+      resultElement.textContent = "";
+    }
   }
 }
 // reset the game
