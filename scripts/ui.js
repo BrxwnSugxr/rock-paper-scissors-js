@@ -65,7 +65,7 @@ function render() {
     resultElement.textContent = lastResult;
 
     // color code the result
-    if (lastresult.include("Win")) resultElement.style.color = "green";
+    if (lastResult.include("Win")) resultElement.style.color = "green";
     else if (lastResult.includes("Lose")) resultElement.style.color = "red";
     else resultElement.style.color = "yellow";
   } else {
@@ -73,5 +73,13 @@ function render() {
   }
 }
 // reset the game
-
+function resetGame() {
+  state.wins = 0;
+  state.losses = 0;
+  state.ties = 0;
+  state.history = [];
+  render();
+  saveState(state);
+}
 //  start the game
+init();
