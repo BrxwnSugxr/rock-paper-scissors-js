@@ -102,27 +102,27 @@ body{
 
 /* Apply animations */
 .choices button {
-  
+  transition: transform 0.2s;
 }
 
 .choices button:active {
-  
+  transform: scale(0.95);
 }
 
 .result {
-
+  animation: fadeIn 0.5s ease;
 }
 
 .history {
- 
+  animation: fadeIn 0.5s ease;
 }
 
 /* Shake animation for ties */
 .tie-animation {
- 
+  animation: shake 0.5s ease;
 }
 
 /* Bounce animation for wins */
 .win-animation {
-  
+  animation: bounce 0.5s ease;
 }
