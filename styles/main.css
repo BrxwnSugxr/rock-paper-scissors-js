@@ -55,9 +55,17 @@ body{
 
 /*Reset Button*/
 .reset-btn {
-
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background:red;
+    border:none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
 }
 /*ResetButton Hover */
 .reset-btn:hover{
-
+    background:darkred;
 }
