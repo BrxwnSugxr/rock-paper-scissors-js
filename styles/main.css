@@ -144,3 +144,40 @@ body{
   .theme-btn:hover {
     background: #777;
   }
+
+  /* Light Theme */
+body.light-theme {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  body.light-theme .game-container {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  body.light-theme .choices button {
+    background: #ddd;
+    color: #333;
+  }
+  
+  body.light-theme .choices button:hover {
+    background: #ccc;
+  }
+  
+  body.light-theme .reset-btn {
+    background: #ff4444;
+  }
+  
+  body.light-theme .reset-btn:hover {
+    background: #cc0000;
+  }
+  
+  body.light-theme .theme-btn {
+    background: #444;
+    color: white;
+  }
+  
+  body.light-theme .theme-btn:hover {
+    background: #666;
+  }
