@@ -1,8 +1,3 @@
-/**
- * loadState(): Loads the game state from localStorage (if it exists).
- * saveState(): Saves the game state to localStorage.
- */
-
 // Load state from localStorage
 export function loadState(state) {
   const savedState = JSON.parse(localStorage.getItem("rpsState"));
