@@ -8,11 +8,13 @@
 
 // import constant and two variables
 import { CHOICES, WIN_CONDITIONS } from "./constants.js";
+
 // Get the computer's choice (randomly select R, P, or S)
 export function getComputerChoice() {
   return CHOICES[Math.floor(Math.random() * CHOICES.length)];
 }
-// export determine choice function
+
+// Determine the result of the game (win, lose, or tie)
 export function determineResult(userChoice, getComputerChoice) {
   if (userChoice === getComputerChoice) {
     return "tie";
