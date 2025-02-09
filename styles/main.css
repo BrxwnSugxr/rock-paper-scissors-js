@@ -35,15 +35,22 @@ transition: background 0.3s;
 
 /*Result Text*/
 .result{
+    background: #666
 
 }
 /*History*/
 .history{
-
+font-size: 24px;
+margin-top: 20px;
+font-weight: bold;
+transition: color 0.5s ease;
 }
+
 /*Reset Button*/
 .reset-btn {
-
+margin-top: 20px;
+font-size:14px;
+color: #bbb;
 }
 /*ResetButton Hover */
 .reset-btn:hover{
